@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- (Yahan se pura code paste karein jo maine pehle diya tha) -->
+    <!-- ... sab kuch yahan paste ho jayega ... -->
+</head>
+<body>
+    <!-- Header, Nav, Sections, Footer -->
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Your Name – MBA Business Analytics</title>
+    <meta name="description" content="MBA Business Analytics | Data Scientist | Python, SQL, Tableau"/>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Chart</text></svg>">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --accent: #34a853;
+            --text: #202124;
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --border: #e0e0e0;
+        }
+        [data-theme="dark"] {
+            --text: #e8eaed;
+            --bg: #1e1e1e;
+            --card: #252525;
+            --border: #383838;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s;
+        }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container { max-width: 960px; margin: auto; padding: 1rem; }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+        }
+        .profile-pic {
+            width: 140px; height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--card);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 1rem;
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: .3rem; }
+        header p { font-size: 1.1rem; opacity: .9; }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: .4rem .8rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all .3s;
+        }
+
+        /* Nav */
+        nav {
+            background: var(--card);
+            box-shadow: 0 2px 8px rgba(0,0,0,.1);
+            position: sticky; top:0; z-index:10;
+        }
+        nav ul {
+            display: flex; justify-content: center; flex-wrap: wrap;
+            list-style: none; padding: .8rem 0;
+        }
+        nav li { margin: 0 .6rem; }
+        nav a {
+            font-weight: 600; color: var(--text); padding: .4rem .8rem;
+            border-radius: 6px; transition: background .2s;
+        }
+        nav a:hover { background: rgba(26,115,232,.1); }
+
+        /* Sections */
+        section { padding: 3rem 0; }
+        section h2 {
+            font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary);
+            position: relative; display: inline-block;
+        }
+        section h2::after {
+            content: ''; position: absolute; bottom: -8px; left:0;
+            width: 60px; height: 4px; background: var(--accent); border-radius: 2px;
+        }
+
+        .grid { display: grid; gap: 1.5rem; }
+        @media (min-width: 640px) { .grid { grid-template-columns: repeat(2,1fr); }}
+        @media (min-width: 960px) { .grid { grid-template-columns: repeat(3,1fr); }}
+
+        .card {
+            background: var(--card); padding: 1.5rem; border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.08); border: 1px solid var(--border);
+        }
+
+        /* Skills */
+        .skill { margin-bottom: 1rem; }
+        .skill-name {
+            display: flex; justify-content: space-between; margin-bottom: .4rem;
+            font-weight: 600; font-size: .95rem;
+        }
+        .skill-bar {
+            height: 10px; background: var(--border); border-radius: 5px; overflow: hidden;
+        }
+        .skill-fill {
+            height: 100%; background: var(--primary); border-radius: 5px;
+            transition: width .6s ease;
+        }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before {
+            content: ''; position: absolute; left: 0; top:0; bottom:0;
+            width: 3px; background: var(--border);
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 2rem; background: var(--card);
+            padding: 1rem; border-radius: 8px; border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -2.3rem; top: 1.2rem;
+            width: 14px; height: 14px; background: var(--primary);
+            border: 3px solid var(--card); border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        .date { font-size: .9rem; color: var(--accent); font-weight: 600; }
+
+        /* Projects */
+        .project { transition: transform .2s; }
+        .project:hover { transform: translateY(-4px); }
+        .tags span {
+            background: rgba(26,115,232,.1); color: var(--primary);
+            padding: .2rem .5rem; border-radius: 4px; margin-right: .4rem; font-size: .8rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block; background: var(--primary); color: white;
+            padding: .6rem 1.2rem; border-radius: 6px; font-weight: 600;
+            margin-top: 1rem; transition: background .3s;
+        }
+        .btn:hover { background: #0d47a1; text-decoration: none; }
+
+        /* Footer */
+        footer {
+            text-align: center; padding: 2rem 1rem; background: var(--card);
+            color: #888; font-size: .9rem; border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            nav ul { flex-direction: column; }
+            nav li { margin: .3rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container" style="position:relative;">
+            <img src="photo.jpg" alt="Your Name" class="profile-pic" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 140 140%22><circle cx=%2270%22 cy=%2270%22 r=%2265%22 fill=%22%23ccc%22/><text x=%2250%25%22 y=%2255%25%22 font-size=%2260%22 fill=%22%23999%22>Photo</text></svg>'">
+            <h1>Your Full Name</h1>
+            <p>MBA Business Analytics | Data Strategist</p>
+
+            <!-- Theme Toggle -->
+            <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nav -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>MBA Business Analytics student passionate about turning data into business impact. Expert in Python, SQL, Tableau, and ML. Love building dashboards and predictive models that solve real problems.</p>
+            <a href="resume.pdf" download class="btn">Download Resume PDF</a>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" style="background:var(--card);">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="grid">
+                <div class="skill"><div class="skill-name">Python<span>92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+                <div class="skill"><div class="skill-name">SQL<span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+                <div class="skill"><div class="skill-name">Tableau<span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+                <div class="skill"><div class="skill-name">Power BI<span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+                <div class="skill"><div class="skill-name">Machine Learning<span>80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+                <div class="skill"><div class="skill-name">Excel<span>95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Data Analyst Intern</h3>
+                    <div class="date">Jun 2024 – Aug 2024</div>
+                    <p><strong>XYZ Corp</strong> – Built Tableau dashboards, reduced reporting time by 40%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" style="background:var(--card);">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>MBA – Business Analytics</h3>
+                    <div class="date">2023 – 2025</div>
+                    <p><strong>IIM Your Campus</strong> – CGPA: 8.7/10</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="grid">
+                <div class="project card">
+                    <h3>Churn Prediction</h3>
+                    <p>Logistic + RF model (92% AUC). Deployed on Streamlit.</p>
+                    <div class="tags"><span>Python</span><span>ML</span></div>
+                </div>
+                <div class="project card">
+                    <h3>Sales Dashboard</h3>
+                    <p>Power BI + Prophet forecasting. Reduced stock-out by 18%.</p>
+                    <div class="tags"><span>Power BI</span><span>SQL</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="background:var(--card);">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>
+                <strong>Email:</strong> <a href="mailto:you@email.com">you@email.com</a><br>
+                <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/you" target="_blank">linkedin.com/in/you</a><br>
+                <strong>GitHub:</strong> <a href="https://github.com/you" target="_blank">github.com/you</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            © <span id="year"></span> Your Name. Made with Code in VS Code.
+        </div>
+    </footer>
+
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme Toggle
+        const toggleTheme = () => {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        };
+
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            document.getElementById('theme-icon').classList.replace('fa-moon', 'fa-sun');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
